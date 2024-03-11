@@ -1,57 +1,57 @@
 @startuml
 
-class Llibre{
-    -Titol: string
-    -Any: date
-    -Categoria: string
-    -Autor: string
-    -Editorial: string
-}
+        class Llibre{
+            -Titol: string
+            -Any: date
+            -Categoria: string
+            -Autor: string
+            -Editorial: string
+        }
 
-class Editorial{
-    -Nom: string
-    -Nacionalitat: string
-}
+        class Editorial{
+            -Nom: string
+            -Nacionalitat: string
+        }
 
-class Categoria{
-    -Tipus: string
-    -Definició
-}
+        class Categoria{
+            -Tipus: string
+            -Definició
+        }
 
-class Autor{
-    -Nom: string
-    -DataNaixement: date 
-}
+        class Autor{
+            -Nom: string
+            -DataNaixement: date 
+        }
 
-class Copia{
-    -CodiCopia: string
-    -Ubicació: string
-}
+        class Copia{
+            -CodiCopia: string
+            -Ubicació: string
+        }
 
-class Prestec{
-    -DataInici: date
-    -DataFi: date
-    -NomLlibre: string
-    -NomLector: string
-}
+        class Prestec{
+            -DataInici: date
+            -DataFi: date
+            -NomLlibre: string
+            -NomLector: string
+        }
 
-class Lector{
-    -Nom: string
-    -Cognoms:  string
-    -DNI: int
-    -Adreça: string
-}
+        class Lector{
+            -Nom: string
+            -Cognoms:  string
+            -DNI: int
+            -Adreça: string
+        }
 
-class Multa{
-    -DataInici:  date
-    -DataFinalitzacio: date
-}
+        class Multa{
+            -DataInici:  date
+            -DataFinalitzacio: date
+        }
 
-Llibre "1" -- "*" Categoria 
-Llibre "1" -- "1" Autor 
-Llibre "1" -- "1" Editorial 
-Llibre "1" -- "*" Copia 
-Copia "1" -- "1" Prestec 
-Lector "1" -- "0--3" Prestec
-Lector "1" -- "0--1" Multa 
-@enduml
+        Llibre "1" -- "*" Categoria 
+        Llibre "1" -- "1" Autor 
+        Llibre "1" -- "1" Editorial 
+        Llibre "1" -- "*" Copia 
+        Copia "1" -- "1" Prestec 
+        Lector "1" -- "0--3" Prestec
+        Lector "1" -- "0--1" Multa 
+        @enduml
