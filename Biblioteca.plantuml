@@ -1,0 +1,51 @@
+@startuml
+
+class Llibre{
+    -Titol: string
+    -Any: date
+    -Categoria: string
+    -Autor: string
+    -Editorial: string
+}
+
+class Editorial{
+    -Nom: string
+    -Nacionalitat: string
+}
+
+class Categoria{
+    -Tipus: string
+    -Definició
+}
+
+class Autor{
+    -Nom: string
+    -DataNaixement: date 
+}
+
+class Copia{
+    -CodiCopia: string
+    -Ubicació: string
+}
+
+class Prestec{
+    -DataInici: date
+    -DataFi: date
+    -NomLlibre: string
+    -NomLector: string
+}
+
+class Lector{
+    -Nom: string
+    -Cognoms:  string
+    -DNI: int
+    -Adreça: string
+}
+
+class Multa{
+    -DataInici:  date
+    -DataFinalitzacio: date
+}
+
+
+@enduml
