@@ -53,5 +53,5 @@ Llibre "1" -- "1" Editorial
 Llibre "1" -- "*" Copia 
 Copia "1" -- "1" Prestec 
 Lector "1" -- "0--3" Prestec
-Lector "1" -- "0--*" Multa 
+Lector "1" -- "0--1" Multa 
 @enduml
