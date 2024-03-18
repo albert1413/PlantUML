@@ -1,116 +1,116 @@
-@startuml
+    @startuml
 
-class Llibre {
-    -Titol: string
-    -Any: date
-    -Categoria: Categoria
-    -Autor: Autor
-    -Editorial: Editorial
+    class Llibre {
+        -Titol: string
+        -Any: date
+        -Categoria: Categoria
+        -Autor: Autor
+        -Editorial: Editorial
 
-    + setTitol(titol: string)
-    + getTitol(): string
-    + setAny(any: date)
-    + getAny(): date
-    + setCategoria(categoria: Categoria)
-    + getCategoria(): Categoria
-    + setAutor(autor: Autor)
-    + getAutor(): Autor
-    + setEditorial(editorial: Editorial)
-    + getEditorial(): Editorial
-}
+        + setTitol(titol: string)
+        + getTitol(): string
+        + setAny(any: date)
+        + getAny(): date
+        + setCategoria(categoria: Categoria)
+        + getCategoria(): Categoria
+        + setAutor(autor: Autor)
+        + getAutor(): Autor
+        + setEditorial(editorial: Editorial)
+        + getEditorial(): Editorial
+    }
 
-class Editorial {
-    -Nom: string
-    -Nacionalitat: string
+    class Editorial {
+        -Nom: string
+        -Nacionalitat: string
 
-    + setNom(nom: string)
-    + getNom(): string
-    + setNacionalitat(nacionalitat: string)
-    + getNacionalitat(): string
-}
+        + setNom(nom: string)
+        + getNom(): string
+        + setNacionalitat(nacionalitat: string)
+        + getNacionalitat(): string
+    }
 
-class Categoria {
-    -Tipus: string
-    -Definició: string
+    class Categoria {
+        -Tipus: string
+        -Definició: string
 
-    + setTipus(tipus: string)
-    + getTipus(): string
-    + setDefinicio(definicio: string)
-    + getDefinicio(): string
-}
+        + setTipus(tipus: string)
+        + getTipus(): string
+        + setDefinicio(definicio: string)
+        + getDefinicio(): string
+    }
 
-class Autor {
-    -Nom: string
-    -DataNaixement: date 
+    class Autor {
+        -Nom: string
+        -DataNaixement: date 
 
-    + setNom(nom: string)
-    + getNom(): string
-    + setDataNaixement(dataNaixement: date)
-    + getDataNaixement(): date
-}
+        + setNom(nom: string)
+        + getNom(): string
+        + setDataNaixement(dataNaixement: date)
+        + getDataNaixement(): date
+    }
 
-class Copia {
-    -CodiCopia: string
-    -Ubicació: string
+    class Copia {
+        -CodiCopia: string
+        -Ubicació: string
 
-    + setCodiCopia(codiCopia: string)
-    + getCodiCopia(): string
-    + setUbicacio(ubicacio: string)
-    + getUbicacio(): string
-}
+        + setCodiCopia(codiCopia: string)
+        + getCodiCopia(): string
+        + setUbicacio(ubicacio: string)
+        + getUbicacio(): string
+    }
 
-class Prestec {
-    -DataInici: date
-    -DataFi: date
-    -Llibre: Llibre
-    -Lector: Lector
+    class Prestec {
+        -DataInici: date
+        -DataFi: date
+        -Llibre: Llibre
+        -Lector: Lector
 
-    + setDataInici(dataInici: date)
-    + getDataInici(): date
-    + setDataFi(dataFi: date)
-    + getDataFi(): date
-    + setLlibre(llibre: Llibre)
-    + getLlibre(): Llibre
-    + setLector(lector: Lector)
-    + getLector(): Lector
-}
+        + setDataInici(dataInici: date)
+        + getDataInici(): date
+        + setDataFi(dataFi: date)
+        + getDataFi(): date
+        + setLlibre(llibre: Llibre)
+        + getLlibre(): Llibre
+        + setLector(lector: Lector)
+        + getLector(): Lector
+    }
 
-class Lector {
-    -Nom: string
-    -Cognoms:  string
-    -DNI: int
-    -Adreça: string
-    -PrestecsActius: Prestec[]
+    class Lector {
+        -Nom: string
+        -Cognoms:  string
+        -DNI: int
+        -Adreça: string
+        -PrestecsActius: Prestec[]
 
-    + setNom(nom: string)
-    + getNom(): string
-    + setCognoms(cognoms: string)
-    + getCognoms(): string
-    + setDNI(dni: int)
-    + getDNI(): int
-    + setAdreca(adreca: string)
-    + getAdreca(): string
-    + getPrestecsActius(): Prestec[]
-}
+        + setNom(nom: string)
+        + getNom(): string
+        + setCognoms(cognoms: string)
+        + getCognoms(): string
+        + setDNI(dni: int)
+        + getDNI(): int
+        + setAdreca(adreca: string)
+        + getAdreca(): string
+        + getPrestecsActius(): Prestec[]
+    }
 
-class Multa {
-    -DataInici:  date
-    -DataFinalitzacio: date
-    -Lector: Lector
+    class Multa {
+        -DataInici:  date
+        -DataFinalitzacio: date
+        -Lector: Lector
 
-    + setDataInici(dataInici: date)
-    + getDataInici(): date
-    + setDataFinalitzacio(dataFinalitzacio: date)
-    + getDataFinalitzacio(): date
-    + setLector(lector: Lector)
-    + getLector(): Lector
-}
+        + setDataInici(dataInici: date)
+        + getDataInici(): date
+        + setDataFinalitzacio(dataFinalitzacio: date)
+        + getDataFinalitzacio(): date
+        + setLector(lector: Lector)
+        + getLector(): Lector
+    }
 
-Llibre "1" -- "*" Categoria 
-Llibre "1" -- "1" Autor 
-Llibre "1" -- "1" Editorial 
-Llibre "1" -- "*" Copia 
-Copia "1" -- "1" Prestec 
-Lector "1" -- "0--3" Prestec
-Lector "1" -- "0--1" Multa 
-@enduml
+    Llibre "1" -- "*" Categoria 
+    Llibre "1" -- "1" Autor 
+    Llibre "1" -- "1" Editorial 
+    Llibre "1" -- "*" Copia 
+    Copia "1" -- "1" Prestec 
+    Lector "1" -- "0--3" Prestec
+    Lector "1" -- "0--1" Multa 
+    @enduml
